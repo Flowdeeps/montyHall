@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Monty Hall</title>
+    <script src="monty.js"></script>
+    <style>
+    #doors {
+    }
+    #doors span {
+      background: DarkKhaki;
+      position: relative;
+      display: inline-block;
+      height: 100px;
+      width: 50px;
+      overflow: hidden;
+    }
+    #doors span.removed {
+      background: DimGray;
+    }
+    #doors span.selected {
+      background: Green;
+    }
+    #doors span.removed:before {
+      background: DarkGray;
+    }
+    #doors span:before {
+      background: BurlyWood;
+      content: ".";
+      color: transparent;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      bottom: 5px;
+      left: 5px;
+      z-index: 1;
+    }
+    #doors span:after {
+      position: absolute;
+      text-align: right;
+      text-indent: 5px;
+      direction: rtl;
+      content: ".";
+      font-size: 3em;
+      line-height: 1.5em;
+      width: 100%;
+      z-index: 2;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>The Monty Hall problem</h1>
+    <div id="doors">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <dl>
+      <dt>Switch door?</dt>
+        <dd id="switch">False</dd>
+      <dt>Run</dt>
+        <dd id="run">0</dd>
+      <dt>Win</dt>
+        <dd id="win">0 cars</dd>
+      <dt>Losses</dt>
+        <dd id="loss">0 goats</dd>
+    </dl>
+  </body>
+</html>
